@@ -4,7 +4,8 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.container {
+/* Centers the checklist and add list button */
+#listsContainer {
     max-width: 800px;
     margin: auto;
     padding: 20px;
@@ -12,14 +13,15 @@ body {
 
 h1 {
     color: #a5572f;
+    text-align: center;
 }
 
-/* Barn theme colors above */
-
+/* Styling for the chores that have been marked as completed */
 .completed {
     text-decoration: line-through;
 }
 
+/* Initial setup for chore items, though this will need JavaScript adjustments for dynamic images */
 .chore-label {
     display: inline-block;
     padding-left: 35px;
@@ -28,6 +30,7 @@ h1 {
     background-position: left center;
 }
 
+/* Animation for when a chore is checked off */
 @keyframes pop {
     0% {
         transform: scale(1);
@@ -46,6 +49,7 @@ h1 {
     animation: pop 0.5s ease;
 }
 
+/* Layout for multiple checklists */
 .checklists-container {
     display: flex;
     justify-content: space-around;
@@ -59,13 +63,24 @@ h1 {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    list-style-type: none;
-
 }
 
+/* Ensures that the list items do not have default bullet points */
 .choreList {
     list-style-type: none;
     /* Removes bullet points */
     padding-left: 0;
     /* Adjust padding as needed */
+}
+
+/* Additional styling for input and button for better usability */
+.choreInput,
+.checklist button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.checklist button {
+    cursor: pointer;
 }

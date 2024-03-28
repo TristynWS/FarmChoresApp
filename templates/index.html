@@ -9,16 +9,17 @@
 </head>
 
 <body>
-    <div id="listsContainer">
-        <div class="checklist">
-            <input type="text" placeholder="Enter a new chore..." class="choreInput">
-            <button onclick="addChore(this)">Add Chore</button>
-            <ul class="choreList"></ul>
+    <div class="container">
+        <h1>Farm Chore To-Do List</h1>
+        <div id="listsContainer" class="checklists-container">
+            <div class="checklist">
+                <input type="text" placeholder="Enter a new chore..." class="choreInput">
+                <button onclick="addChore(this)">Add Chore</button>
+                <ul class="choreList"></ul>
+            </div>
         </div>
+        <button id="addListButton" onclick="addList()">+</button>
     </div>
-    <button id="addListButton">+</button>
-
-    <div id="listsContainer"></div>
 
     <script src="/static/script.js"></script>
 </body>

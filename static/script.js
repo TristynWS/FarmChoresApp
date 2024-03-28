@@ -1,46 +1,50 @@
+document.getElementById('addListButton').addEventListener('click', function () {
+    const listsContainer = document.getElementById('listsContainer');
+    const newList = document.createElement('div');
+    newList.classList.add('checklist');
+    newList.innerHTML = `
+        <input type="text" placeholder="Enter a new chore..." class="choreInput">
+        <button onclick="addChore(event)">Add Chore</button>
+        <ul class="choreList"></ul>
+    `;
+    listsContainer.appendChild(newList);
+});
+
 let currentAnimalIndex = 0;
-const animalImages = ['bones.jpg', 'ethel.jpg']; // images' URLs or paths here
+const animalImages = ['/static/images/Bones.png', '/static/images/ethel.png']; // Update paths as necessary
 
 function addChore(event) {
-    const input = event.target.previousElementSibling; // Assuming input is directly before the button in your HTML
-    const list = input.nextElementSibling; // Assuming list is directly after the input in your HTML
+    const button = event.target;
+    const checklistDiv = button.closest('.checklist');
+    const input = checklistDiv.querySelector('.choreInput');
+    const list = checklistDiv.querySelector('.choreList');
+    const choreText = input.value.trim();
 
-    const newItem = document.createElement('li');
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    // code to handle checkbox behavior
+    if (choreText) {
+        const listItem = document.createElement('li');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                listItem.classList.add('completed');
+            } else {
+                listItem.classList.remove('completed');
+            }
+        });
 
-    const label = document.createElement('label');
-    label.style.display = 'block'; // Make label behave like a block for background image
-    label.style.backgroundImage = `url(${animalImages[currentAnimalIndex]})`;
-    label.style.backgroundRepeat = 'no-repeat';
-    label.style.backgroundSize = '30px 30px';
-    label.style.paddingLeft = '40px'; // Adjust padding to not overlap the text with the image
+        const label = document.createElement('label');
+        label.textContent = choreText;
+        label.style.backgroundImage = `url(${animalImages[currentAnimalIndex]})`;
+        label.classList.add('chore-label'); // Ensure .chore-label CSS is applied
 
-    document.getElementById('addListButton').addEventListener('click', function () {
-        const newList = document.createElement('div');
-        newList.innerHTML = `
-            <input type="text" placeholder="Enter a new chore...">
-            <button onclick="addChore(this)">Add Chore</button>
-            <ul class="choreList"></ul>
-        `;
-        newList.classList.add('checklist');
-        document.getElementById('listsContainer').appendChild(newList);
-    });
+        listItem.appendChild(checkbox);
+        listItem.appendChild(label);
+        list.appendChild(listItem);
 
-    function addChore(button) {
-        const list = button.nextElementSibling;
-        const input = button.previousElementSibling;
-        // continue with the rest of your addChore logic here, appending to `list`
+        // Cycle through the animal images
+        currentAnimalIndex = (currentAnimalIndex + 1) % animalImages.length;
+        input.value = ''; // Clear the input field after adding
+    } else {
+        alert('Please enter a chore!');
     }
-
-
-    newItem.appendChild(checkbox);
-    newItem.appendChild(label);
-    list.appendChild(newItem);
-
-    // Cycle through images
-    currentAnimalIndex = (currentAnimalIndex + 1) % animalImages.length;
-
-    input.value = ''; // Clear the input field
 }
