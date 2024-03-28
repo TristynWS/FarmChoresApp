@@ -48,3 +48,9 @@ function addChore(event) {
         alert('Please enter a chore!');
     }
 }
+document.addEventListener('click', function (event) {
+    // Check if the clicked element is an "Add Chore" button
+    if (event.target && event.target.nodeName == "BUTTON" && event.target.textContent == "Add Chore") {
+        addChore(event);
+    }
+});
