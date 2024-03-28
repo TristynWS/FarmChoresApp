@@ -1,5 +1,5 @@
 let currentAnimalIndex = 0;
-const animalImages = ['bones_head.jpg', 'ethel_head.jpg']; // images' URLs or paths here
+const animalImages = ['bones.jpg', 'ethel.jpg']; // images' URLs or paths here
 
 function addChore(event) {
     const input = event.target.previousElementSibling; // Assuming input is directly before the button in your HTML
@@ -27,6 +27,12 @@ function addChore(event) {
         newList.classList.add('checklist');
         document.getElementById('listsContainer').appendChild(newList);
     });
+
+    function addChore(button) {
+        const list = button.nextElementSibling;
+        const input = button.previousElementSibling;
+        // continue with the rest of your addChore logic here, appending to `list`
+    }
 
 
     newItem.appendChild(checkbox);

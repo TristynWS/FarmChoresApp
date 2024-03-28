@@ -61,5 +61,11 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     list-style-type: none;
 
+}
 
+.choreList {
+    list-style-type: none;
+    /* Removes bullet points */
+    padding-left: 0;
+    /* Adjust padding as needed */
 }

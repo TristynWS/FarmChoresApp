@@ -9,14 +9,15 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Farm Chore Tracker</h1>
-        <input type="text" id="choreInput" placeholder="Enter a new chore...">
-        <button onclick="addChore()">Add Chore</button>
-        <ul id="choreList"></ul>
-
+    <div id="listsContainer">
+        <div class="checklist">
+            <input type="text" placeholder="Enter a new chore..." class="choreInput">
+            <button onclick="addChore(this)">Add Chore</button>
+            <ul class="choreList"></ul>
+        </div>
     </div>
-    <button id="addListBtn">+</button>
+    <button id="addListButton">+</button>
+
     <div id="listsContainer"></div>
 
     <script src="/static/script.js"></script>
