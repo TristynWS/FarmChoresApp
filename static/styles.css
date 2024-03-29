@@ -3,7 +3,6 @@ body {
     color: #5a4e47;
     font-family: 'gil sans bold', sans-serif;
     background: url('/static/images/barn-background.jpg');
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -112,9 +111,31 @@ h1 {
     /* Centers the button */
     padding: 10px 20px;
     background-color: #f4f1ea;
-    /* Rusty brown */
     color: #c81217;
     font-size: 40px;
     /* Larger, easy to click */
 
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/static/images/barn-background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    /* Ensure it stays in the background */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Prevent scrolling */
 }
