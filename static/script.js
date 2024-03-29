@@ -26,11 +26,14 @@ function addChore(event) {
         checkbox.type = 'checkbox';
         checkbox.addEventListener('change', function () {
             if (this.checked) {
-                listItem.classList.add('completed');
+                listItem.classList.add('completed'); // Make sure this matches your CSS
+                listItem.classList.add('completed-animation'); // Triggers the animation
             } else {
                 listItem.classList.remove('completed');
+                listItem.classList.remove('completed-animation');
             }
         });
+
 
         const label = document.createElement('label');
         label.textContent = choreText;

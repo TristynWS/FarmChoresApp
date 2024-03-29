@@ -1,9 +1,21 @@
 body {
     background-color: #f4f1ea;
     color: #5a4e47;
-    font-family: 'Arial', sans-serif;
-    background: url('/static/images/barn-background.jpg') no-repeat center center fixed;
+    font-family: 'gil sans bold', sans-serif;
+    background: url('/static/images/barn-background.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+}
+
+.bp-top {
+    background-position: top center;
+}
+
+.bp-bottom {
+    background-position: bottom center;
 }
 
 /* Centers the checklist and add list button */
@@ -26,9 +38,9 @@ h1 {
 /* Initial setup for chore items, though this will need JavaScript adjustments for dynamic images */
 .chore-label {
     display: inline-block;
-    padding-left: 35px;
+    padding-left: 110px;
     background-repeat: no-repeat;
-    background-size: 30px 30px;
+    background-size: 50px 50px;
     background-position: left center;
 }
 
@@ -63,8 +75,8 @@ h1 {
     min-width: 300px;
     margin: 10px;
     padding: 20px;
-    background-color: #d9534f;
-    /* Rusty red background */
+    background-color: #c81217;
+    /* barn red background */
     color: #ffffff;
     /* White text */
     border: 2px solid #5bc0de;
@@ -99,10 +111,10 @@ h1 {
     margin: 20px auto;
     /* Centers the button */
     padding: 10px 20px;
-    background-color: #a5572f;
+    background-color: #f4f1ea;
     /* Rusty brown */
-    color: white;
-    font-size: 24px;
+    color: #c81217;
+    font-size: 40px;
     /* Larger, easy to click */
 
 }
